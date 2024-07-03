@@ -23,6 +23,7 @@ export class MovieMapper {
             description: movie.overview,
             releaseDate: new Date(movie.release_date),
             rating: movie.vote_average,
+            // "https://image.tmdb.org/t/p/w500/6XJM3C47iGOK9nFU6yLFCSf4U5c.jpg"
             poster: `https://image.tmdb.org/t/p/w500${ movie.poster_path}`,
             backdrop: `https://image.tmdb.org/t/p/w500${ movie.backdrop_path}`,
             genres: movie.genres.map( genre=> genre.name),
