@@ -11,9 +11,10 @@ interface Props {
     // movie: FullMovie;
     poster: string;
     originalTitle: string;
+    title:string;
 }
 
-export const MovieHeader = ({poster, originalTitle}: Props) => {
+export const MovieHeader = ({poster, originalTitle, title}: Props) => {
     const {height: screenHeight} = useWindowDimensions();
     const navigation = useNavigation();
   return (
@@ -30,6 +31,7 @@ export const MovieHeader = ({poster, originalTitle}: Props) => {
         
         <View style={styles.marginContainer}>
             <Text style={styles.title}>{originalTitle}</Text>
+            <Text style={styles.subTitle}>{title}</Text>
         </View>
         
         <View style={styles.backButton}>
@@ -37,7 +39,7 @@ export const MovieHeader = ({poster, originalTitle}: Props) => {
                 onPress={()=> navigation.goBack()}
             >
                 <Text style={styles.backButtonText}>Go Back</Text>
-
+               
             </Pressable>
         </View>
 
@@ -50,9 +52,9 @@ export const MovieHeader = ({poster, originalTitle}: Props) => {
 
 
 const styles = StyleSheet.create({
-  container: {
-    color:colors.textInfo,
-  },
+    container:{
+      marginBottom:20,
+    },
     imageContainer: {
       width: '100%',
       shadowColor: '#000',

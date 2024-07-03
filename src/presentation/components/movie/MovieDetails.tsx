@@ -9,6 +9,11 @@ import { Formatter } from '../../../config/helpers/formatter';
 import { Cast } from '../../../core/entities/cast.entity';
 import { CastActor } from '../cast/CastActor';
 import { colors } from '../../../config/theme/globalStyles';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+
+  
+
 
 
 interface Props {
@@ -18,10 +23,14 @@ interface Props {
 
 export const MovieDetails = ({movie, cast}: Props) => {
   return (
-    <View style={styles.container}>
+    <View>
         <View style={styles.detailsContainer}>
             <View style={styles.detailsRow}>
-                <Text style={{color: (movie.rating >= 6) ? 'green': 'red', fontWeight:'bold', fontSize:17}}>{movie.rating}</Text>
+                <View style={styles.rating}>
+                    <Icon name="star" size={20} color="gold" style={{marginRight:5}}/>
+                    <Text style={{color: (movie.rating >= 6) ? 'green': 'red', fontWeight:'bold', fontSize:20}}>{(movie.rating).toFixed(1)}</Text>
+                </View>
+
                 <Text style={styles.genres}>{movie.genres.join(' ')}</Text>
             </View>
             <Text style={styles.title}>Story</Text>
@@ -49,9 +58,7 @@ export const MovieDetails = ({movie, cast}: Props) => {
   );
 };
 const styles = StyleSheet.create({
-    container:{
-        // color: colors.textInfo,
-    },
+  
     detailsContainer:{
         marginHorizontal:20,
     },
@@ -61,6 +68,12 @@ const styles = StyleSheet.create({
     },
     detailsRow:{
         flexDirection:'row',
+        justifyContent:'space-between',
+    },
+    rating:{
+        flex:1,
+        flexDirection:'row',
+        alignItems:'center',
     },
     genres:{
         marginLeft: 5,
