@@ -3,15 +3,19 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
 
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View} from 'react-native';
 import { FullMovie } from '../../../core/entities/movie.entity';
 import { Formatter } from '../../../config/helpers/formatter';
+import { Cast } from '../../../core/entities/cast.entity';
+import { CastActor } from '../cast/CastActor';
+
 
 interface Props {
    movie: FullMovie;
+   cast: Cast[];
 }
 
-export const MovieDetails = ({movie}: Props) => {
+export const MovieDetails = ({movie, cast}: Props) => {
   return (
     <>
         <View style={styles.detailsContainer}>
@@ -29,21 +33,27 @@ export const MovieDetails = ({movie}: Props) => {
 
         {/* Casting -Actors */}
         <View style={styles.castingContainer}>
-            <Text style={styles.title}>Actors</Text>
+            <Text style={styles.titleCast}>Actors</Text>
+            <FlatList
+                data={cast}
+                keyExtractor={ (item, index)=>` ${item.id}-${index}`}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                renderItem={({item})=> <CastActor  actor={item}/>}
+            />
 
         </View>
 
-       
     </>
   );
 };
-const styles= StyleSheet.create({
+const styles = StyleSheet.create({
     detailsContainer:{
         marginHorizontal:20,
     },
     castingContainer: {
         marginTop:10,
-        marginBottom:100,
+        marginBottom:50,
     },
     detailsRow:{
         flexDirection:'row',
@@ -58,6 +68,12 @@ const styles= StyleSheet.create({
         fontSize:25,
         marginTop:10,
         fontWeight:'bold',
+    },
+    titleCast: {
+        fontSize:25,
+        marginVertical:10,
+        fontWeight:'bold',
+        marginHorizontal:20,
     },
     text:{
         fontSize: 17,
