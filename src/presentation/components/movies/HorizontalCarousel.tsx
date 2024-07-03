@@ -7,6 +7,7 @@ import { FlatList, NativeScrollEvent,NativeSyntheticEvent, StyleSheet, Text, Vie
 import { Movie } from '../../../core/entities/movie.entity';
 import { MoviesPoster } from './MoviesPoster';
 import { useEffect, useRef } from 'react';
+import { colors } from '../../../config/theme/globalStyles';
 
 interface Props {
     movies: Movie[];
@@ -74,5 +75,6 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         marginLeft:10,
         marginBottom:10,
+        color: colors.textTitle,
     },
 });

@@ -8,6 +8,7 @@ import { FullMovie } from '../../../core/entities/movie.entity';
 import { Formatter } from '../../../config/helpers/formatter';
 import { Cast } from '../../../core/entities/cast.entity';
 import { CastActor } from '../cast/CastActor';
+import { colors } from '../../../config/theme/globalStyles';
 
 
 interface Props {
@@ -17,16 +18,16 @@ interface Props {
 
 export const MovieDetails = ({movie, cast}: Props) => {
   return (
-    <>
+    <View style={styles.container}>
         <View style={styles.detailsContainer}>
             <View style={styles.detailsRow}>
-                <Text style={styles.rating}>{movie.rating}</Text>
-                <Text style={styles.genres}>{movie.genres.join(', ')}</Text>
+                <Text style={{color: (movie.rating >= 6) ? 'green': 'red', fontWeight:'bold', fontSize:17}}>{movie.rating}</Text>
+                <Text style={styles.genres}>{movie.genres.join(' ')}</Text>
             </View>
-            <Text style={styles.title}>Story:</Text>
+            <Text style={styles.title}>Story</Text>
             <Text style={styles.text}>{movie.description}</Text>
 
-            <Text style={styles.title}>Budget:</Text>
+            <Text style={styles.title}>Budget</Text>
             <Text style={styles.text}>{Formatter.currency(movie.budget)}</Text>
 
         </View>
@@ -44,10 +45,13 @@ export const MovieDetails = ({movie, cast}: Props) => {
 
         </View>
 
-    </>
+    </View>
   );
 };
 const styles = StyleSheet.create({
+    container:{
+        // color: colors.textInfo,
+    },
     detailsContainer:{
         marginHorizontal:20,
     },
@@ -58,25 +62,32 @@ const styles = StyleSheet.create({
     detailsRow:{
         flexDirection:'row',
     },
-    rating:{
-
-    },
     genres:{
         marginLeft: 5,
+        fontWeight:'400',
+        backgroundColor: colors.itemsGenre,
+        borderRadius:10,
+        padding: 2,
     },
     title:{
         fontSize:25,
         marginTop:10,
         fontWeight:'bold',
+        color: colors.textTitle,
     },
     titleCast: {
         fontSize:25,
         marginVertical:10,
         fontWeight:'bold',
         marginHorizontal:20,
+        color: colors.textTitle,
     },
     text:{
         fontSize: 17,
+        color:colors.textInfo,
+    },
+    flatListText:{
+        color: colors.textInfo,
     },
 
 });

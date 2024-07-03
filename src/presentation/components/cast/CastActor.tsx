@@ -4,6 +4,7 @@
 
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Cast } from '../../../core/entities/cast.entity';
+import { colors } from '../../../config/theme/globalStyles';
 
 interface Props {
     actor: Cast;
@@ -41,9 +42,11 @@ const styles= StyleSheet.create({
     actorInfo:{
         marginLeft:10,
         marginTop:4,
+
     },
     textActorInfo: {
         fontSize: 15,
         fontWeight:'bold',
+        color:colors.textInfo,
     },
 });

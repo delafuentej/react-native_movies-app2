@@ -10,6 +10,7 @@ import { MovieHeader } from '../../components/movie/MovieHeader';
 import { MovieDetails } from '../../components/movie/MovieDetails';
 import { ScrollView } from 'react-native-gesture-handler';
 import { FullScreenLoader } from '../../components/loaders/FullScreenLoader';
+import { colors } from '../../../config/theme/globalStyles';
 
 interface Props extends StackScreenProps<RootStackParams,'Details'>{}
 
@@ -23,7 +24,7 @@ export const DetailsScreen = ({route}:Props) => {
         return <FullScreenLoader />;
       }
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor: colors.background}}>
        {/* Header */}
       <MovieHeader
         originalTitle= {movie!.originalTitle}

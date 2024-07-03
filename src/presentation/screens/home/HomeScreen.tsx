@@ -10,6 +10,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { PosterCarousel } from '../../components/movies/PosterCarousel';
 import { HorizontalCarousel } from '../../components/movies/HorizontalCarousel';
 import { FullScreenLoader } from '../../components/loaders/FullScreenLoader';
+import { colors } from '../../../config/theme/globalStyles';
 
 export const HomeScreen = () => {
 
@@ -20,7 +21,7 @@ export const HomeScreen = () => {
     return <FullScreenLoader />;
   }
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor: colors.background}}>
         <View style={{marginTop: top + 20, paddingBottom: 30}}>
           
           {/*Main Carousel: nowPlaying movies  */}

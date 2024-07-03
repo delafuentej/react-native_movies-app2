@@ -5,6 +5,7 @@
 
 import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { colors } from '../../../config/theme/globalStyles';
 
 interface Props {
     // movie: FullMovie;
@@ -16,7 +17,7 @@ export const MovieHeader = ({poster, originalTitle}: Props) => {
     const {height: screenHeight} = useWindowDimensions();
     const navigation = useNavigation();
   return (
-    <>
+    <View style={styles.container}>
         <View style={{...styles.imageContainer, height: screenHeight * 0.7}}>
            <View style={styles.imageBorder}>
             <Image
@@ -41,7 +42,7 @@ export const MovieHeader = ({poster, originalTitle}: Props) => {
         </View>
 
 
-    </> 
+    </View> 
   );
 };
 
@@ -49,6 +50,9 @@ export const MovieHeader = ({poster, originalTitle}: Props) => {
 
 
 const styles = StyleSheet.create({
+  container: {
+    color:colors.textInfo,
+  },
     imageContainer: {
       width: '100%',
       shadowColor: '#000',
@@ -78,10 +82,12 @@ const styles = StyleSheet.create({
     subTitle: {
       fontSize: 16,
       opacity: 0.8,
+      color: colors.textTitle,
     },
     title: {
-      fontSize: 20,
+      fontSize: 30,
       fontWeight: 'bold',
+      color: colors.textTitle,
     },
     backButton: {
       position: 'absolute',
