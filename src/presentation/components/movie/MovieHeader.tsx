@@ -30,8 +30,9 @@ export const MovieHeader = ({poster, originalTitle, title}: Props) => {
         </View>
         
         <View style={styles.marginContainer}>
-            <Text style={styles.title}>{originalTitle}</Text>
-            <Text style={styles.subTitle}>{title}</Text>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.subTitle}>{originalTitle}</Text>
+           
         </View>
         
         <View style={styles.backButton}>
@@ -94,16 +95,18 @@ const styles = StyleSheet.create({
     backButton: {
       position: 'absolute',
       zIndex: 999,
-      elevation: 9,
+      elevation: 100,
       top: 35,
       left: 10,
+     
     },
     backButtonText: {
       color: 'white',
+  
       fontSize: 25,
       fontWeight: 'bold',
-      textShadowColor: 'rgba(0, 0, 0, 0.55)',
-      textShadowOffset: {width: -1, height: 1},
-      textShadowRadius: 10,
+      textShadowColor: 'rgba(0, 0, 0, 0.9)', 
+      textShadowOffset: {width: -2, height: 2},
+      textShadowRadius: 20,
     },
   });

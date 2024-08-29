@@ -31,11 +31,12 @@ export const MovieDetails = ({movie, cast}: Props) => {
                     <Text style={{color: (movie.rating >= 6) ? 'green': 'red', fontWeight:'bold', fontSize:20}}>{(movie.rating).toFixed(1)}</Text>
                 </View>
 
-                <Text style={styles.genres}>{movie.genres.join(' ')}</Text>
+                <Text style={styles.genres}>{movie.genres.join(' | ')}</Text>
             </View>
+            {/* story */}
             <Text style={styles.title}>Story</Text>
             <Text style={styles.text}>{movie.description}</Text>
-
+            {/* budget */}
             <Text style={styles.title}>Budget</Text>
             <Text style={styles.text}>{Formatter.currency(movie.budget)}</Text>
 
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
         fontWeight:'400',
         backgroundColor: colors.itemsGenre,
         borderRadius:10,
-        padding: 2,
+        padding: 5,
     },
     title:{
         fontSize:25,
