@@ -1,83 +1,69 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# TheMovieDB React Native App
 
-# Getting Started
+## Description
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This is a mobile application developed in React Native that uses the [TheMovieDB](https://www.themoviedb.org/) API to display movie posters. The app categorizes movies into three categories: **Most Popular**, **Top Rated**, and **Upcomming**. Users can click on any movie poster to view a brief description of the movie along with a list of the main actors. The app also utilizes design patterns like Mappers and Entities, an intuitive navigation system, and a fullscreen loader to enhance the user experience.
 
-## Step 1: Start the Metro Server
+## Features
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **Movie Categorization**: Displays movies by categories: Most Popular, Top Rated, and Latest Releases.
+- **Movie Details**: Shows detailed information about the selected movie, including its synopsis and actors.
+- **Movie Carousel**: Horizontal carousel with InfiniteScroll to browse through movies.
+- **Loading Screen**: Fullscreen loader while fetching data.
+- **Design Patterns**: Use of Mappers and Entities patterns for code structure.
+- **Environment Variables**: Configuration of TheMovieDB API Key through environment variables.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Screen Navigation
+   Navigation is managed using the @react-navigation/native package. The main flow includes the following screens:
+   - **HomeScreen**: Displays movie categories in horizontal carousels.
+   - **MovieDetailsScreen**: Shows detailed information about a selected movie, including its synopsis and actors (horizontal FlatList).
 
-```bash
-# using npm
-npm start
+## Design Patterns
+   - **Mapper Pattern**: The Mapper pattern is used to transform data fetched from the API into entities that are used within the application.
+    - **Entity  Pattern**: The Entity pattern encapsulates specific data and behaviors of a movie.
 
-# OR using Yarn
-yarn start
-```
+## App Visualization
+   - **Movie Carousel**: The movie carousel is implemented using a horizontal FlatList without additional dependencies, supporting InfiniteScroll.
+   - **Fullscreen Loader**:  component displays a loading indicator while data is being fetched.
 
-## Step 2: Start your Application
+## Requirements
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- Node.js >= 14.x
+- npm or yarn
+- React Native CLI
+- API Key from [TheMovieDB](https://www.themoviedb.org/)
 
-### For Android
+## Installation
 
-```bash
-# using npm
-npm run android
+1. **Clone the repository:**
 
-# OR using Yarn
-yarn android
-```
+    ```bash
+    git clone https://github.com/your-username/themoviedb-react-native-app.git
+    cd themoviedb-react-native-app
+    ```
 
-### For iOS
+2. **Install dependencies:**
 
-```bash
-# using npm
-npm run ios
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-# OR using Yarn
-yarn ios
-```
+3. **Set up environment variables:**
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+   Create a `.env` file at the root of the project with the following configuration:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+    ```env
+    TMDB_API_KEY=your_api_key_here
+    ```
 
-## Step 3: Modifying your App
+4. **Run the application:**
 
-Now that you have successfully run the app, let's modify it.
+    ```bash
+    npx react-native run-android
+    # or
+    npx react-native run-ios
+    ```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# react-native_moviesApp
-# react-native_movies-app
-# react-native_movies-app
-# react-native_movies-app
