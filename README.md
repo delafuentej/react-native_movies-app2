@@ -3,12 +3,12 @@
 Here is a preview of how it works:
 
 <div style="display: flex; justify-content: space-around;">
-   <a href="assets/video/movieApp-android.mov">
-      <img src="assets/gifs/android.gif" alt="Video android" />
+   <a href="src/assets/video/movieApp-android.mov">
+      <img src="src/assets/gifs/android.gif" alt="Video android" />
    </a>
 
-   <a href="assets/video/movieApp-ios.mov">
-      <img src="assets/gifs/ios.gif" alt="Video ios" />
+   <a href="src/assets/video/movieApp-ios.mov">
+      <img src="src/assets/gifs/ios.gif" alt="Video ios" />
    </a>
 </div>
 
